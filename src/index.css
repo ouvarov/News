@@ -1,0 +1,194 @@
+body {
+    width: 100%;
+}
+.loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.loader__wrap {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: rotatePreloader 2s infinite ease-in;
+}
+.loader__wrap div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.loader__wrap div:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 10%;
+    height: 10%;
+    background-color: #000;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+.loader__item:nth-child(1), .loader__item:nth-child(2), .loader__item:nth-child(3), .loader__item:nth-child(4), .loader__item:nth-child(5), .loader__item:nth-child(6), .loader__item:nth-child(7), .loader__item:nth-child(8), .loader__item:nth-child(9), .loader__item:nth-child(10) {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.loader__item:nth-child(1) {
+    transform: rotateZ(0deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 9;
+    animation-delay: -0.1s;
+}
+.loader__item:nth-child(2) {
+    transform: rotateZ(36deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 8;
+    animation-delay: -0.2s;
+}
+.loader__item:nth-child(3) {
+    transform: rotateZ(72deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 7;
+    animation-delay: -0.3s;
+}
+.loader__item:nth-child(4) {
+    transform: rotateZ(108deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 6;
+    animation-delay: -0.4s;
+}
+.loader__item:nth-child(5) {
+    transform: rotateZ(144deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 5;
+    animation-delay: -0.5s;
+}
+.loader__item:nth-child(6) {
+    transform: rotateZ(180deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 4;
+    animation-delay: -0.6s;
+}
+.loader__item:nth-child(7) {
+    transform: rotateZ(216deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 3;
+    animation-delay: -0.7s;
+}
+.loader__item:nth-child(8) {
+    transform: rotateZ(252deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 2;
+    animation-delay: -0.8s;
+}
+.loader__item:nth-child(9) {
+    transform: rotateZ(288deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 1;
+    animation-delay: -0.9s;
+}
+.loader__item:nth-child(10) {
+    transform: rotateZ(324deg);
+    animation: rotateCircle 2s infinite linear;
+    z-index: 0;
+    animation-delay: -1s;
+}
+
+@keyframes rotateCircle {
+    0% {
+        opacity: 0;
+    }
+
+    0% {
+        opacity: 1;
+        transform: rotateZ(36deg);
+    }
+
+    7% {
+        transform: rotateZ(0deg);
+    }
+
+    57% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(-324deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotatePreloader {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotateZ(-360deg);
+    }
+}
+
+.news {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding-left: 150px;
+}
+.news__item {
+    padding-bottom: 16px;
+}
+.news__link {
+    color: #000;
+    font-size: 20px;
+    padding-bottom: 8px;
+    display: block;
+}
+.news__inner-wrap {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.news__image {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+    object-fit: cover;
+}
+.news__image--default {
+    display: flex;
+    background: gray;
+    text-align: center;
+    align-items: center;
+}
+.news__description {
+    flex: 1;
+}
+.news__author,
+.news__data {
+    color: #000;
+    opacity: .5;
+    line-height: 20px;
+}
+
+.pagination,
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.pagination {
+    display: none;
+}
+.pagination--active {
+    display: block;
+}
